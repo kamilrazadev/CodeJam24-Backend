@@ -6,8 +6,9 @@ config();
 const senderEmail = process.env.EMAIL;
 const senderEmailPass = process.env.PASS;
 
-export const sendOtp = async (email) => {
+export const sendOtp = async (email, firstName, lastName) => {
   try {
+    const userFullName = firstName + " " + lastName;
     // Checking if the email already sent
     await otpModel.findOneAndDelete({ email: email });
 
@@ -73,7 +74,7 @@ export const sendOtp = async (email) => {
                 </head>
                 <body>
                     <div class="container">
-                        <h1>Email Verification</h1>
+                        <h1>Hi, ${userFullName}</h1>
                         <p>Your One-Time Verification Code is:</p>
                         <p class="verification-code" id="otpCode">${otp}</p>
                     </div>

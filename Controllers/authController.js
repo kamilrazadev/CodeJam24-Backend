@@ -32,7 +32,7 @@ export const verifyAccountSignupController = async (req, res) => {
       });
     }
 
-    const otpSent = await sendOtp(email);
+    const otpSent = await sendOtp(email, firstName, lastName);
 
     if (!otpSent.status) {
       res.status(200).json({
