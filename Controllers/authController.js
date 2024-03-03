@@ -129,7 +129,7 @@ export const verifyOtpSignupController = async (req, res) => {
       status: true,
       message: "success",
       details: "Account created successfully",
-      token: userToken,
+      data: userToken,
     });
   } catch (error) {
     res.status(500).json({
@@ -261,7 +261,7 @@ export const verifyOtploginController = async (req, res) => {
       status: true,
       message: "success",
       details: "Login Successsfully",
-      token: userToken,
+      data: userToken,
     });
   } catch (error) {
     res.status(500).json({
