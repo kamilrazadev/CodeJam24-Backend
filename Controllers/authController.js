@@ -15,7 +15,7 @@ export const verifyAccountSignupController = async (req, res) => {
   const { firstName, lastName, email, password } = req.body;
 
   try {
-    if (!firstName || !lastName || !email || !password) {
+    if (!firstName || !email || !password) {
       return res.status(200).json({
         status: false,
         message: "fieldsReq",
